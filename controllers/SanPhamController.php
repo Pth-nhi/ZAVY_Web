@@ -65,7 +65,8 @@ class SanPhamController
         // Nếu chưa tìm kiếm và chưa chọn danh mục
         } else {
 
-            $sanPhams = [];
+            // Hiển thị đúng 8 sản phẩm được chọn
+            $sanPhams = $this->sanPham->lay8SanPhamTrangChu();
 
             $title = 'Sản phẩm - ZAVYWEB';
         }
