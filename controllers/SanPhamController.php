@@ -65,7 +65,8 @@ class SanPhamController
         // Nếu chưa tìm kiếm và chưa chọn danh mục
         } else {
 
-            $sanPhams = [];
+            // Hiển thị 6 sản phẩm mới nhất
+            $sanPhams = $this->sanPham->lay6SanPham();
 
             $title = 'Sản phẩm - ZAVYWEB';
         }
