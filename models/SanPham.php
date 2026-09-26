@@ -30,26 +30,6 @@ class SanPham
         return $stmt->fetchAll();
     }
 
-    // Lấy 6 sản phẩm mới nhất
-    public function lay6SanPham(): array
-    {
-        $sql = "
-            SELECT
-                SanPham.*,
-                DanhMuc.ten_danh_muc
-            FROM SanPham
-            INNER JOIN DanhMuc
-                ON SanPham.danh_muc_id = DanhMuc.id
-            ORDER BY SanPham.id DESC
-            LIMIT 6
-        ";
-
-        $stmt = $this->db->prepare($sql);
-        $stmt->execute();
-
-        return $stmt->fetchAll();
-    }
-
     // Lấy sản phẩm theo danh mục
     public function layTheoDanhMuc(int $danhMucId): array
     {
@@ -73,7 +53,7 @@ class SanPham
         return $stmt->fetchAll();
     }
 
-    // Tìm sản phẩm theo tên sản phẩm hoặc tên danh mục
+        // Tìm sản phẩm theo tên sản phẩm hoặc tên danh mục
     public function timKiem(string $tuKhoa): array
     {
         $sql = "
